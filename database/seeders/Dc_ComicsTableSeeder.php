@@ -16,7 +16,15 @@ class Dc_ComicsTableSeeder extends Seeder
         $data = config('db-comics');
         foreach($data as $item){
             $newItem = new DcComic();
-            $newItem->fill($item);
+            $newItem->title = $item['title'];
+            $newItem->description = $item['description'];
+            $newItem->thumb = $item['thumb'];
+            $newItem->price = str_replace('$','',$item['price']);
+            $newItem->series = $item['series'];
+            $newItem->sale_date = $item['sale_date'];
+            $newItem->type = $item['type'];
+
+            // $newItem->fill($item);
             $newItem->save();
         }
         // dd($data);
