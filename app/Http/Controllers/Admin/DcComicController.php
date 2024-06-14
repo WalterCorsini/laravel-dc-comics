@@ -35,7 +35,7 @@ class DcComicController extends Controller
         $dcComics = new DcComic();
         $dcComics->fill($data);
         $dcComics->save();
-        return redirect()->route("dccomics.show", ["dcComics" => $dcComics->id]);
+        return redirect()->route("dccomics.show", ["dccomic" => $dcComics->id]);
     }
 
     /**

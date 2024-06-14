@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DcComicController;
 //  link to controller
 use App\Http\Controllers\ModelExampleController;
-
+use App\Models\DcComic;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,8 @@ use App\Http\Controllers\ModelExampleController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
+Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
+
 
 // Route::get('/about', function () {
 //     return view('about');
