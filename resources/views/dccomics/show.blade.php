@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Show</h1>
+    <div class="cointainer w-75 m-auto text-center">
+        <h1 class="pb-3">Dettagli Fumetto : </h1>
+        <p> {{ $dccomic->description }}</p>
+    </div>
 @endsection

@@ -41,10 +41,10 @@ class DcComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(DcComic $dccomic)
     {
         //qui manca la parte del collegamento tramite i parametri che riceve show
-        return view('dccomics.show');
+        return view('dccomics.show', compact('dccomic'));
     }
 
     /**
