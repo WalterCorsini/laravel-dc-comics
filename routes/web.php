@@ -2,7 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\DcComicController;
 //  link to controller
 use App\Http\Controllers\ModelExampleController;
 
@@ -18,20 +18,22 @@ use App\Http\Controllers\ModelExampleController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('home');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+// Route::get('/about', function () {
+//     return view('about');
+// })->name('about');
 
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+// Route::get('/contact', function () {
+//     return view('contact');
+// })->name('contact');
 
+
+Route::resource('dccomics', DcComicController::class);
 
 //  when use model to link to table in database and link to controller the route is:
-Route::get('/nameurl',[ModelExampleController::class, 'index'])->name('alias');
+// Route::get('/nameurl',[ModelExampleController::class, 'index'])->name('alias');
         //  name url -  name controller -    name method controller   - alias page.blade.php
