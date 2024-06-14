@@ -1,0 +1,26 @@
+header {
+    width: 100%;
+    height: 70px;
+}
+
+ul {
+    font-size: 30px;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    margin-bottom: 0 !important;
+    li {
+        list-style: none;
+    &:hover{
+        border-bottom: 3px solid blue;
+    }
+        a {
+            text-decoration: none;
+        }
+    }
+}
+img {
+    width: 150px;
+}
+.active {
+    border-bottom: 3px solid blue;
+}
