@@ -26,7 +26,7 @@
                     {{-- /btn delete  --}}
 
                     <!-- modal -->
-                    <div class="modal fade" id="Modale" data-form="{{ $curComic->id }}" data-bs-backdrop="static"
+                    <div class="modal fade" id="Modale" data-form="{{ $curComic->id }}"
                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModaleLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
