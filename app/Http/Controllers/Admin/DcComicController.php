@@ -51,17 +51,19 @@ class DcComicController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(DcComic $dccomic)
     {
-        //
+        return view('dccomics.edit', compact('dccomic'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, DcComic $dccomic)
     {
-        //
+        $data = $request->all();
+        $dccomic->update($data);
+        return redirect()->route("dccomics.show", ["dccomic" => $dccomic->id]);
     }
 
     /**

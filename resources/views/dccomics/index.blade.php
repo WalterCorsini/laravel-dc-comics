@@ -13,6 +13,8 @@
                     <p><strong>Uscita:          </strong>   {{ $curComic->sale_date}}   </p>
                     <p><strong>Prezzo:          </strong>   {{ $curComic->price}} €     </p>
                     <a class="btn btn-info text-black text-decoration-none" href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}">per saperene di piu</a>
+                    <a class="btn btn-success text-black text-decoration-none" href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}">Modifica</a>
+
                 </div>
                 <div class="w-25">
                     <img class="w-100" src="{{ $curComic->thumb }}">
