@@ -37,11 +37,11 @@
                     <input class="w-75" type="text" id="sale_date" name="sale_date" value="{{ $dccomic->sale_date }}">
                 </div>
                 <div class="d-flex gap-3 mb-3">
-                    <label for="genere">Genere</label>
-                    <select class="w-75" name="genere" id="genere">
+                    <label for="type">Genere</label>
+                    <select class="w-75" name="type" id="type">
                         <option value="comic book">Seleziona Genere</option>
                         <option @selected($dccomic->type === 'comic book') value="comic book">comic book</option>
-                        <option @selected($dccomic->type === 'graphic novel') value="comic book">graphic novel</option>
+                        <option @selected($dccomic->type === 'graphic novel') value="graphic novel">graphic novel</option>
                     </select>
                     {{-- <label for="type">Genere</label>
                     <input class="w-75 mb-3" type="text" id="type" name="type" value="{{ $dccomic->type }}"> --}}

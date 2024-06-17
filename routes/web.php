@@ -22,6 +22,3 @@ Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
 
 Route::resource('dccomics', DcComicController::class);
 
-//  when use model to link to table in database and link to controller the route is:
-// Route::get('/nameurl',[ModelExampleController::class, 'index'])->name('alias');
-        //  name url -  name controller -    name method controller   - alias page.blade.php
