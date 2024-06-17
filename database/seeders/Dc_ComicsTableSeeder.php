@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\DcComic;
+use Ramsey\Uuid\Type\Decimal;
 
 class Dc_ComicsTableSeeder extends Seeder
 {
@@ -19,11 +20,11 @@ class Dc_ComicsTableSeeder extends Seeder
             $newItem->title = $item['title'];
             $newItem->description = $item['description'];
             $newItem->thumb = $item['thumb'];
+            // $newItem->price = (double)$item;
             $newItem->price = str_replace('$','',$item['price']);
             $newItem->series = $item['series'];
             $newItem->sale_date = $item['sale_date'];
             $newItem->type = $item['type'];
-
             // $newItem->fill($item);
             $newItem->save();
         }

@@ -32,6 +32,7 @@ class DcComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        // dd($data);
         $dcComics = new DcComic();
         $dcComics->fill($data);
         $dcComics->save();

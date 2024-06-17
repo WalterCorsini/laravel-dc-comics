@@ -20,17 +20,6 @@ use App\Models\DcComic;
 
 Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
 
-
-// Route::get('/about', function () {
-//     return view('about');
-// })->name('about');
-
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact');
-
-
 Route::resource('dccomics', DcComicController::class);
 
 //  when use model to link to table in database and link to controller the route is:
