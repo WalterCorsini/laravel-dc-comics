@@ -46,8 +46,10 @@
                     {{-- <label for="type">Genere</label>
                     <input class="w-75 mb-3" type="text" id="type" name="type" value="{{ $dccomic->type }}"> --}}
                 </div>
-                <button class="btn btn-success" type="submit">Apporta modifiche</button>
-                <a class="btn btn-danger" href="{{ route('dccomics.index') }}">Torna alla Home</a>
+                <div class="text-center">
+                    <button class="btn btn-success" type="submit">Apporta modifiche</button>
+                    <a class="btn btn-danger" href="{{ route('dccomics.index') }}">Torna alla Home</a>
+                </div>
 
             </form>
         @endsection

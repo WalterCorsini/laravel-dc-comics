@@ -40,8 +40,9 @@
                 {{-- <label for="type">Genere</label>
                 <input class="w-75 mb-3" type="text" id="type" name="type"> --}}
             </div>
-
-            <button class="btn btn-success" type="submit">Aggiungi</button>
+            <div class="text-center">
+                <button class="btn btn-success" type="submit">Aggiungi</button>
+            </div>
         </form>
     </div>
 @endsection

@@ -6,7 +6,4 @@ import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**"]);
 
 //  adesso per usare un immagine dentro la cartella resources/img
-{
-    /* <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="Logo Molisana"> */
-}
-
+{/* <img src="{{ Vite::asset('resources/img/logo.png') }}" alt="Logo Molisana"> */}
