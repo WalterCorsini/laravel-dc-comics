@@ -20,7 +20,7 @@
                             <form action="{{ route('dccomics.destroy', ['dccomic' => $curComic->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger">Elimina</button>
+                            <button class="btn btn-danger delButton" type="submit" onclick="return confirm('Are you sure?')">Elimina</button>
                         </form>
                     </div>
                 </div>
