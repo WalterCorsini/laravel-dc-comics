@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container d-flex flex-column align-items-center justify-content-center pt-5">
-        <h1>Lista Fumetti</h1>
         @foreach ($dcComicsList as $curComic)
             <div class="d-flex border-bottom align-items-center w-75 pt-3">
                 <div class="w-75">
@@ -20,7 +18,7 @@
                             <form action="{{ route('dccomics.destroy', ['dccomic' => $curComic->id]) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger delButton" type="submit" onclick="return confirm('Are you sure?')">Elimina</button>
+                            <button class="btn btn-danger" onclick="return confirm('Sei sicuro di volerlo eliminare?')">Elimina</button>
                         </form>
                     </div>
                 </div>
