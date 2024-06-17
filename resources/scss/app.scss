@@ -1,3 +1,9 @@
 @use "./partials/header";
 @import "~bootstrap";
 @import "~fontawesome";
+
+label
+{
+    text-align: right;
+    width: 10%;
+}

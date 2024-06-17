@@ -2,7 +2,7 @@
 
 @section('content')
         @foreach ($dcComicsList as $curComic)
-            <div class="d-flex border-bottom align-items-center w-75 pt-3">
+            <div class="d-flex border-bottom align-items-center w-75 m-auto pt-3">
                 <div class="w-75">
                     <p><strong> Titolo: </strong> {{ $curComic->title }} </p>
                     {{-- <p><strong> Descrizione:    </strong>   {{ $curComic->description }}</p> --}}

@@ -1,38 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container w-75 m-auto text-center">
-        <h1>Aggiungi articolo</h1>
+    <div class="container w-75 m-auto">
+        <h1 class="text-center">Aggiungi articolo</h1>
         <form action="{{ route('dccomics.store') }}" method="POST">
         {{-- cosi ci riconosce il server --}}
         @csrf
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="title">Titolo</label>
-                <input type="text" id="title" name="title">
+                <input class="w-75" type="text" id="title" name="title">
             </div>
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="description">Descrizione</label>
-                <input type="text" id="description" name="description">
+                <input class="w-75" type="text" id="description" name="description">
             </div>
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="thumb">Immagine</label>
-                <input type="text" id="thumb" name="thumb" placeholder="url dell'immagine">
+                <input class="w-75" type="text" id="thumb" name="thumb" placeholder="url dell'immagine">
             </div>
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="price">Prezzo</label>
-                <input type="text" id="price" name="price" placeholder="prezzo in euro">
+                <input class="w-75" type="text" id="price" name="price" placeholder="prezzo in euro">
             </div>
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="series">Serie</label>
-                <input type="text" id="series" name="series">
+                <input class="w-75" type="text" id="series" name="series">
             </div>
-            <div>
+            <div class="d-flex gap-3 mb-3">
                 <label for="sale_date">Uscita</label>
-                <input type="text" id="sale_date" name="sale_date">
+                <input class="w-75" type="text" id="sale_date" name="sale_date">
             </div>
-            <div>
-                <label for="type">Genere</label>
-                <input type="text" id="type" name="type">
+            <div class="d-flex gap-3 mb-3">
+                <label for="genere">Genere</label>
+                <select class="w-75" name="genere" id="genere">
+                    <option value="comic book">Seleziona Genere</option>
+                    <option value="comic book">comic book</option>
+                    <option value="comic book">graphic novel</option>
+                </select>
+                {{-- <label for="type">Genere</label>
+                <input class="w-75 mb-3" type="text" id="type" name="type"> --}}
             </div>
 
             <button class="btn btn-success" type="submit">Aggiungi</button>
