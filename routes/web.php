@@ -28,6 +28,8 @@ Route::any('/delete/{id}', [TrashController::class, 'forceDelete'])->name('delet
 // link per ripristinare l'oggetto
 Route::any('/restore/{id}', [TrashController::class, 'restore'])->name('restore');
 
+Route::any('/restoreall', [TrashController::class, 'restoreAll'])->name('restoreall');
+
 
 
 Route::resource('dccomics', DcComicController::class);

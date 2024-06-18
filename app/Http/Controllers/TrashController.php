@@ -27,4 +27,12 @@ class TrashController extends Controller
             }
             return redirect()->route('dccomics.trash');
         }
+        public function restoreAll(){
+            $dccomics = DcComic::onlyTrashed()->get();
+        // Ripristina ogni elemento
+        foreach ($dccomics as $dccomic) {
+            $dccomic->restore();
+        }
+        return redirect()->route('dccomics.trash');
+        }
 }

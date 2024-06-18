@@ -3,6 +3,12 @@
 @section('content')
 @if(count($dcComicsList) >0)
     <h1 class="text-center"> Cestino</h1>
+    {{-- btn restore all  --}}
+    <form class="text-center" action="{{ route('restoreall') }}" method="GET">
+        @csrf
+        <button type="submit" class="btn btn-outline-success mb-5">Ripristina Tutto</button>
+    </form>
+    {{-- /btn restore all  --}}
 @else
     <h1 class="text-center"> Nessun Fumetto nel cestino</h1>
 @endif
