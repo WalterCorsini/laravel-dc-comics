@@ -36,8 +36,8 @@
                 <label for="type">Genere</label>
                 <select class="w-25" name="type" id="type">
                     <option value="seleziona genere">Seleziona Genere</option>
-                    <option @selected($dccomic->type === 'comic book') value="comic book">comic book</option>
-                    <option @selected($dccomic->type === 'graphic novel') value="graphic novel">graphic novel</option>
+                    <option @selected($dccomic->type === 'comic book') value="@old('type',comic book)">comic book</option>
+                    <option @selected($dccomic->type === 'graphic novel') value="@old('type',graphic novel)">graphic novel</option>
                 </select>
             </div>
             <div class="text-center">
