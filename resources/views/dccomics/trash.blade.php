@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(count($dcComicsList) >0)
+    <h1 class="text-center"> Cestino</h1>
+@else
+    <h1 class="text-center"> Nessun Fumetto nel cestino</h1>
+@endif
     <div class="container">
         @foreach ($dcComicsList as $curComic)
             <div class="card-container">
