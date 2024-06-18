@@ -1,20 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     @foreach ($dcComicsList as $curComic)
-        <div class="d-flex border-bottom align-items-center w-75 pt-3 m-auto">
-            {{-- left col text --}}
-            <div class="w-75">
-                <p><strong> Titolo: </strong> {{ $curComic->title }} </p>
-                <p><strong>Serie: </strong> {{ $curComic->series }} </p>
-                <p><strong>Genere: </strong> {{ $curComic->type }} </p>
-                <p><strong>Uscita: </strong> {{ $curComic->sale_date }} </p>
-                <p><strong>Prezzo: </strong> {{ $curComic->price }} € </p>
+
+            <div class="card-container">
+                {{-- title --}}
+                <div class="card-title">
+                    <span><strong> Titolo: </strong></span>
+                    <p>
+                        {{ $curComic->title }}
+                    </p>
+                </div>
+                {{-- /title --}}
+
+                {{-- img --}}
+                <div class="card-img mb-2">
+                    <img src="{{ $curComic->thumb }}">
+                </div>
+                {{-- /img --}}
 
                 {{-- section btn --}}
-                <div class="d-flex gap-2">
+                <div class="card-button">
                     <a class="btn btn-info text-white text-decoration-none"
-                        href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}">per saperene di piu</a>
+                        href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}">dettagli</a>
                     <a class="btn btn-success text-decoration-none"
                         href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}">Modifica</a>
 
@@ -27,27 +36,14 @@
                         Elimina
                     </button>
                     </form>
-
-
                     <!-- modal -->
                     @include('partials.modal-delete')
                     {{-- /modal --}}
-
                 </div>
                 {{-- /section btn --}}
 
             </div>
-            {{-- /left-col text --}}
 
-
-
-            {{-- right col image --}}
-            <div class="w-25">
-                <img class="w-100" src="{{ $curComic->thumb }}">
-            </div>
-            {{-- /right-col image --}}
-
+            @endforeach
         </div>
-    @endforeach
-    </div>
 @endsection

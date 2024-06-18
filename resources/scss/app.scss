@@ -1,6 +1,11 @@
 @use "./partials/header";
+@use "./partials/index";
 @import "~bootstrap";
 @import "~fontawesome";
+
+img{
+    max-width: 100%;
+}
 
 label
 {
