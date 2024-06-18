@@ -58,8 +58,7 @@
                 <div class="card-button">
 
                     {{-- btn delete  --}}
-                    <form action="{{ route('delete', $curComic->id) }}"
-                         method="POST">
+                    <form action="{{ route('delete', $curComic->id) }}" METHOD="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-outline-danger">
@@ -72,7 +71,7 @@
                     <form action="{{ route('restore', $curComic->id) }}"
                         method="POST">
                         @csrf
-                        @method('DELETE')
+                        @method('PUT')
                         <button type="submit" class="btn btn-outline-success">
                             <i class="fa-solid fa-rotate-left"></i>
                         </button>

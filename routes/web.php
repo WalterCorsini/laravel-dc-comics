@@ -19,21 +19,22 @@ use App\Models\DcComic;
 */
 
 
+//  route index
+Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
+
+// general route to DcComicController
+Route::resource('dccomics', DcComicController::class);
 
 //link to go to trash page
 Route::get('/trash',[DcComicController::class, 'trash'])->name('dccomics.trash');
 
 //link deletes an item permanently
-Route::any('/delete/{id}', [DcComicController::class, 'forceDelete'])->name('delete');
+Route::delete('/delete/{id}', [DcComicController::class, 'forceDelete'])->name('delete');
 
 // link to restore selected item
-Route::any('/restore/{id}', [DcComicController::class, 'restore'])->name('restore');
+Route::put('/restore/{id}', [DcComicController::class, 'restore'])->name('restore');
 
 // link to restore All Item
-Route::any('restoreall', [DcComicController::class, 'restoreAll'])->name('restoreall');
+Route::get('restoreall', [DcComicController::class, 'restoreAll'])->name('restoreall');
 
-// general route to DcComicController
-Route::resource('dccomics', DcComicController::class);
 
-//  route index
-Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
