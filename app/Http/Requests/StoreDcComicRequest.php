@@ -11,7 +11,7 @@ class StoreDcComicRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;,
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreDcComicRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'min:10'],
+            'description'=> ['min:20'],
+            'price'=> ['required' ,'min:1','max:1000'],
+            'sale_date' => ['required', 'date', 'before:'. now()->toDateString()],
+            'type'=> ['required','in:comic book,graphic novel']
         ];
     }
 }

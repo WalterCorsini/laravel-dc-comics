@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
     <div class="container w-75">
         <h1 class="text-center">Aggiungi articolo</h1>
         <form class="w-100 d-flex flex-column gap-3" action="{{ route('dccomics.store') }}" method="POST">

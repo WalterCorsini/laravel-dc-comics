@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\DcComic;
+use App\Http\Requests\StoreDcComicRequest;
+// use App\Http\Requests\UpdatePastaRequest;
 
 class DcComicController extends Controller
 {
@@ -29,7 +31,7 @@ class DcComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, DcComic $dcComics)
+    public function store(StoreDcComicRequest $request, DcComic $dcComics)
     {
         $data = $request->all();
         // dd($data);
