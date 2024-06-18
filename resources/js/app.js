@@ -3,28 +3,28 @@ import "~resources/scss/app.scss";
 import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**"]);
 
-//selezione tutti i bottoni elimina nella pagina
+//selection all delete form button
 const deleteBtns = document.querySelectorAll('.delete button');
 
-// controllo che ci siano bottoni per eseguire questo codice
+// controll that there are button
 if(deleteBtns.length>0){
-    //creo un foreach per poter applicare ad ogni bottone l'ascolto dell'evento click
+    //create foreach to apply eventlistner on click to button
     deleteBtns.forEach((btn) => {
         btn.addEventListener('click', function (e){
             e.preventDefault();
-            // salvo il titolo prelevato dal bottone che ha un attributo dataset (data-nomescelto)
+            // save title take to button by dataset attribute
             const title = btn.dataset.comicTitle;
-            // personalizzo il messaggio in pagina a seconda del film da cancellare inserendo il titolo
+            // create message to show on page when click form button
             document.getElementById('message').innerHTML = `stai per cancellare<br> <strong>${title}</strong>,<br> ne sei sicuro?`;
-            // seleziono il bottone cancella in pagina
+            // select button to confirm delete
             const modal = new bootstrap.Modal(document.getElementById('delete-modal'));
-            //mi metto in ascolto dell'evento click
+            //listen event click button
             document.getElementById("modal-delete-btn")
                 .addEventListener("click", function () {
-                    // se viene cliccato faccio submit del genitore (il pulsante submit del form)
+                    // when clicked, I submit the form button (parent)
                     btn.parentElement.submit();
                 });
-            // mostra il modale
+            // show modal on page.
              modal.show();
         });
 });

@@ -3,20 +3,12 @@
 @section('content')
 
     {{-- section error validate --}}
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    @include('partials.validate-error')
     {{-- /section error validate --}}
 
     {{-- container --}}
     <div class="container w-75">
-        
+
         {{-- section title --}}
         <h1 class="text-center">
             Modifica Articolo
