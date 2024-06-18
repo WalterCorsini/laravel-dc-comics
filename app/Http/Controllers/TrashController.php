@@ -20,4 +20,11 @@ class TrashController extends Controller
             }
             return redirect()->route('dccomics.trash');
         }
+        public function restore($id){
+            $dccomic = DcComic::withTrashed()->find($id);
+            if ($dccomic) {
+                $dccomic->restore();
+            }
+            return redirect()->route('dccomics.trash');
+        }
 }

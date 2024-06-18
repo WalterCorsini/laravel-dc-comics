@@ -31,8 +31,17 @@
                     <form action="{{ route('delete', $curComic->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Elimina</button>
+                        <button type="submit" class="btn btn-outline-danger">Elimina</button>
                     </form>
+                    {{-- /btn delete  --}}
+
+                    {{-- btn restore  --}}
+                    <form action="{{ route('restore', $curComic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-outline-success">Ripristina</button>
+                    </form>
+                    {{-- /btn restore  --}}
 
                 </div>
                 {{-- /section btn --}}

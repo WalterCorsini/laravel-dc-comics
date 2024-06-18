@@ -25,6 +25,9 @@ Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
 Route::get('/trash',[TrashController::class, 'trash'])->name('dccomics.trash');
 //link per eliminare l'oggetto
 Route::any('/delete/{id}', [TrashController::class, 'forceDelete'])->name('delete');
+// link per ripristinare l'oggetto
+Route::any('/restore/{id}', [TrashController::class, 'restore'])->name('restore');
+
 
 
 Route::resource('dccomics', DcComicController::class);
