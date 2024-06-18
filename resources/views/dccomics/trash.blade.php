@@ -1,23 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{-- to control if there are or not element --}}
 @if(count($dcComicsList) >0)
+
+    {{-- section title --}}
     <h1 class="text-center"> Cestino</h1>
-    {{-- btn restore all  --}}
-    <form class="text-center" action="{{ route('restoreall') }}" method="GET">
+    {{-- /section title --}}
+
+
+    {{-- form restore all  --}}
+    <form class="text-center" action="{{ route('restoreall') }}"
+    method="GET">
         @csrf
-        <button type="submit" class="btn btn-outline-success mb-5">Ripristina Tutto</button>
+        <button type="submit" class="btn btn-outline-success mb-5">
+            <i class="fa-solid fa-rotate-left">All</i>
+        </button>
     </form>
-    {{-- /btn restore all  --}}
+    {{-- /form restore all  --}}
+
 @else
-    <h1 class="text-center"> Nessun Fumetto nel cestino</h1>
+
+    {{-- message no element --}}
+    <h1 class="text-center">
+        Nessun Fumetto nel cestino
+    </h1>
+    {{-- /message no element --}}
+
 @endif
+{{-- /to control if there are or not element --}}
+
+    {{-- container  --}}
     <div class="container">
+
+        {{-- card-container  --}}
         @foreach ($dcComicsList as $curComic)
             <div class="card-container">
                 {{-- title --}}
                 <div class="card-title">
-                    <span><strong> Titolo: </strong></span>
+                    <span>
+                        <strong> Titolo: </strong>
+                    </span>
                     <p>
                         {{ $curComic->title }}
                     </p>
@@ -34,18 +58,24 @@
                 <div class="card-button">
 
                     {{-- btn delete  --}}
-                    <form action="{{ route('delete', $curComic->id) }}" method="POST">
+                    <form action="{{ route('delete', $curComic->id) }}"
+                         method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-outline-danger">Elimina</button>
+                        <button type="submit" class="btn btn-outline-danger">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </form>
                     {{-- /btn delete  --}}
 
                     {{-- btn restore  --}}
-                    <form action="{{ route('restore', $curComic->id) }}" method="POST">
+                    <form action="{{ route('restore', $curComic->id) }}"
+                        method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-outline-success">Ripristina</button>
+                        <button type="submit" class="btn btn-outline-success">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
                     </form>
                     {{-- /btn restore  --}}
 
@@ -54,6 +84,10 @@
 
             </div>
         @endforeach
+        {{-- card-container  --}}
+
     </div>
+    {{-- container  --}}
+
 @endsection
 
