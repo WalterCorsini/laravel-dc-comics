@@ -3,5 +3,6 @@
     <ul class="d-flex justify-content-center align-items-center gap-3">
         <li class="{{ Request::route()->getName() === 'dccomics.index' ? 'active' : '' }}"><a href="{{ route('dccomics.index') }}">Home</a></li>
         <li class="{{ Request::route()->getName() === 'dccomics.create' ? 'active' : '' }}"><a href="{{ route('dccomics.create') }}">Aggiungi</a></li>
+        <li class="{{ Request::route()->getName() === 'dccomics.trash' ? 'active' : '' }}"><a href="{{ route('dccomics.trash') }}">Cestino</a></li>
     </ul>
 </header>

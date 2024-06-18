@@ -34,10 +34,6 @@ class DcComicController extends Controller
     public function store(StoreDcComicRequest $request, DcComic $dcComics)
     {
         $data = $request->all();
-        // dd($data);
-        $dcComics = new DcComic();
-        $dcComics->fill($data);
-        $dcComics->save();
         $dcComics = DcComic::create($data);
         return redirect()->route("dccomics.show", ["dccomic" => $dcComics->id]);
     }
@@ -75,5 +71,6 @@ class DcComicController extends Controller
         $dccomic->delete();
         return redirect()->route('dccomics.index');
     }
+
 }
 

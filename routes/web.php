@@ -3,6 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DcComicController;
+use App\Http\Controllers\TrashController;
 //  link to controller
 use App\Http\Controllers\ModelExampleController;
 use App\Models\DcComic;
@@ -19,6 +20,12 @@ use App\Models\DcComic;
 */
 
 Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
+
+//link per andare alla pagina cestino
+Route::get('/trash',[TrashController::class, 'trash'])->name('dccomics.trash');
+//link per eliminare l'oggetto
+Route::any('/delete/{id}', [TrashController::class, 'forceDelete'])->name('delete');
+
 
 Route::resource('dccomics', DcComicController::class);
 
