@@ -26,22 +26,21 @@ class StoreDcComicRequest extends FormRequest
             'description'=> ['min:20'],
             'price'=> ['required' ,'min:1','max:1000'],
             'sale_date' => ['required', 'date', 'before:'. now()->toDateString()],
-            'type'=> ['required','in:comic book,graphic novel']
+            'type'=> ['in:comic book,graphic novel']
         ];
     }
 
     public function messages() {
         return [
             'title.required' => 'Il campo titolo è vuoto',
-            'title.min' => 'devi inserire un minimo di 10 caratteri',
-            'description.required' => 'devi inserire un minimo di 20 caratteri',
+            'title.min' => 'Titolo: devi inserire un minimo di 10 caratteri',
+            'description.min' => 'Descrizione: devi inserire un minimo di 20 caratteri',
             'price.required' => 'il campo prezzo non puo essere vuoto',
-            'price.min' => 'il campo prezzo non puo essere inferiore ad 1 euro',
-            'price.max' => 'il campo prezzo non puo essere inferiore ad 1000 euro',
+            'price.min' => 'Prezzo : minino 1 euro',
+            'price.max' => 'Prezzo : massimo 1000 euro',
             'sale_date.required' => 'il campo data d\'uscita non puo essere vuoto',
-            'sale_date.before' => 'il campo data d\'uscita non puo essere una data futura',
-            'type.required' => 'il campo genere non puo essere vuoto',
-            'type.in' => 'il campo genere non è tra quelli indicati',
+            'sale_date.before' => 'Data: hai inserito una data futura',
+            'type.in' => 'Genere: seleziona uno tra quelli indicati',
         ];
     }
 }

@@ -16,28 +16,29 @@
             @csrf
             <div>
                 <label for="title">Titolo</label>
-                <input class="w-100" type="text" id="title" name="title">
+                <input class="w-100" type="text" id="title" name="title" value="{{ old('title') }}">
             </div>
             <div>
                 <label for="description">Descrizione</label>
                 <textarea class="w-100" type="text" id="description" name="description">
+                    {{ old('description') }}
                 </textarea>
             </div>
             <div>
                 <label for="thumb">Immagine</label>
-                <input class="w-100" type="text" id="thumb" name="thumb" placeholder="url dell'immagine">
+                <input class="w-100" type="text" id="thumb" name="thumb" value="{{ old('thumb') }}">
             </div>
             <div>
                 <label for="price">Prezzo</label>
-                <input class="w-100" type="text" id="price" name="price" placeholder="prezzo in euro">
+                <input class="w-100" type="text" id="price" name="price" value="{{ old('price') }}">
             </div>
             <div>
                 <label for="series">Serie</label>
-                <input class="w-100" type="text" id="series" name="series">
+                <input class="w-100" type="text" id="series" name="series" value="{{ old('series') }}">
             </div>
             <div>
                 <label for="sale_date">Uscita</label>
-                <input class="w-100" id="sale_date" name="sale_date">
+                <input class="w-100" id="sale_date" name="sale_date" value="{{ old('sale_date') }}">
             </div>
             <div>
                 <label for="type">Genere</label>
