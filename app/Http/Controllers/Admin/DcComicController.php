@@ -36,6 +36,7 @@ class DcComicController extends Controller
         $dcComics = new DcComic();
         $dcComics->fill($data);
         $dcComics->save();
+        $dcComics = DcComic::create($data);
         return redirect()->route("dccomics.show", ["dccomic" => $dcComics->id]);
     }
 
@@ -65,7 +66,6 @@ class DcComicController extends Controller
         $dccomic->update($data);
         return redirect()->route("dccomics.show", ["dccomic" => $dccomic->id]);
     }
-
     /**
      * Remove the specified resource from storage.
      */
@@ -75,3 +75,4 @@ class DcComicController extends Controller
         return redirect()->route('dccomics.index');
     }
 }
+

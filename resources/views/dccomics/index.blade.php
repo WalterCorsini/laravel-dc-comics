@@ -13,42 +13,24 @@
 
                 {{-- section btn --}}
                 <div class="d-flex gap-2">
-                    <a class="btn btn-info text-black text-decoration-none"
+                    <a class="btn btn-info text-white text-decoration-none"
                         href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}">per saperene di piu</a>
-                    <a class="btn btn-success text-black text-decoration-none"
+                    <a class="btn btn-success text-decoration-none"
                         href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}">Modifica</a>
 
                     {{-- btn delete  --}}
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target='[data-form="{{ $curComic->id }}"]'>
+                    <form action="{{ route('dccomics.destroy', ['dccomic' => $curComic->id]) }}"
+                        method="POST" class="delete">
+                        @csrf
+                        @method('DELETE')
+                    <button type="button" data-comic-title="{{$curComic->title}}" class="btn btn-danger">
                         Elimina
                     </button>
-                    {{-- /btn delete  --}}
+                    </form>
+
 
                     <!-- modal -->
-                    <div class="modal fade" id="Modale" data-form="{{ $curComic->id }}"
-                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModaleLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-
-                                {{--  text and button modal --}}
-                                <div class="modal-body text-center">
-                                    Sei sicuro di voler cancellare l'elemento selezionato?
-                                    <div class="d-flex gap-3 justify-content-center mt-3">
-                                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Annulla</button>
-                                        <form action="{{ route('dccomics.destroy', ['dccomic' => $curComic->id]) }}"
-                                            method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-outline-success" id="delete" type="submit">Conferma</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                {{--  /text and button modal --}}
-
-                            </div>
-                        </div>
-                    </div>
+                    @include('partials.modal-delete')
                     {{-- /modal --}}
 
                 </div>
