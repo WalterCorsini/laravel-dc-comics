@@ -5,7 +5,7 @@
         <span>
             <strong>Titolo: </strong>
         </span>
-        <p>
+        <p class="p-0 m-0">
             {{ $curComic->title }}
         </p>
     </div>
