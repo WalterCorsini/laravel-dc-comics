@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\DcComic;
 use App\Http\Requests\StoreDcComicRequest;
-// use App\Http\Requests\UpdatePastaRequest;
+use App\Http\Requests\UpdateDcComicRequest;
 
 class DcComicController extends Controller
 {
@@ -61,7 +61,7 @@ class DcComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DcComic $dccomic)
+    public function update(UpdateDcComicRequest $request, DcComic $dccomic)
     {
         $data = $request->all();
         $dccomic->update($data);
