@@ -44,8 +44,8 @@
                 <label for="type">Genere</label>
                 <select class="w-25" name="type" id="type">
                     <option>Seleziona Genere</option>
-                    <option value="comic book">comic book</option>
-                    <option value="graphic novel">graphic novel</option>
+                    <option @selected(@old('type') === 'comic book') value="comic book">comic book</option>
+                    <option @selected(@old('type') === 'graphic novel') value="graphic novel">graphic novel</option>
                 </select>
             </div>
             <div class="text-center">
