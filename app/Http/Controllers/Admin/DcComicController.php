@@ -29,7 +29,7 @@ class DcComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, DcComic $dcComics)
     {
         $data = $request->all();
         // dd($data);
@@ -45,7 +45,6 @@ class DcComicController extends Controller
      */
     public function show(DcComic $dccomic)
     {
-        //qui manca la parte del collegamento tramite i parametri che riceve show
         return view('dccomics.show', compact('dccomic'));
     }
 

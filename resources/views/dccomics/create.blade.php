@@ -16,24 +16,24 @@
             </div>
             <div>
                 <label for="thumb">Immagine</label>
-                <input  class="w-100" type="text" id="thumb" name="thumb" placeholder="url dell'immagine">
+                <input class="w-100" type="text" id="thumb" name="thumb" placeholder="url dell'immagine">
             </div>
             <div>
                 <label for="price">Prezzo</label>
-                <input  class="w-100" type="text" id="price" name="price" placeholder="prezzo in euro">
+                <input class="w-100" type="text" id="price" name="price" placeholder="prezzo in euro">
             </div>
             <div>
                 <label for="series">Serie</label>
-                <input  class="w-100" type="text" id="series" name="series">
+                <input class="w-100" type="text" id="series" name="series">
             </div>
             <div>
                 <label for="sale_date">Uscita</label>
-                <input  class="w-100" id="sale_date" name="sale_date">
+                <input class="w-100" id="sale_date" name="sale_date">
             </div>
             <div>
                 <label for="type">Genere</label>
-                <select  class="w-25" name="type" id="type">
-                    <option value="comic book">Seleziona Genere</option>
+                <select class="w-25" name="type" id="type">
+                    <option>Seleziona Genere</option>
                     <option value="comic book">comic book</option>
                     <option value="graphic novel">graphic novel</option>
                 </select>
