@@ -23,9 +23,9 @@
                 {{-- section btn --}}
                 <div class="card-button">
                     <a class="btn btn-info text-white text-decoration-none"
-                        href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}">dettagli</a>
+                        href="{{ route('dccomics.show', ['dccomic' => $curComic->id]) }}"><i class="fa-solid fa-plus"></i></a>
                     <a class="btn btn-success text-decoration-none"
-                        href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}">Modifica</a>
+                        href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}"><i class="fa-solid fa-pen-to-square"></i></a>
 
                     {{-- btn delete  --}}
                     <form action="{{ route('dccomics.destroy', ['dccomic' => $curComic->id]) }}"
@@ -33,7 +33,7 @@
                         @csrf
                         @method('DELETE')
                     <button type="button" data-comic-title="{{$curComic->title}}" class="btn btn-danger">
-                        Elimina
+                        <i class="fa-solid fa-trash"></i>
                     </button>
                     </form>
                     <!-- modal -->
