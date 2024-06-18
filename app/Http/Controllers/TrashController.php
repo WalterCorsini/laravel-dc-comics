@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 class TrashController extends Controller
 {
-        //metodo che ci rimanda alla pagina che visualizza il cestino con i record eliminati
+        //view deleted items page
         public function trash(){
             $dcComicsList = DcComic::onlyTrashed()->get();
             return view('dccomics.trash', compact('dcComicsList'));
         }
 
-        // metodo che elimina definitivamente il record  e ci riporta al cestino
+        // permanently deletes an item
         public function forceDelete($id){
             $dccomic = DcComic::withTrashed()->find($id);
             if ($dccomic) {
@@ -20,6 +20,8 @@ class TrashController extends Controller
             }
             return redirect()->route('dccomics.trash');
         }
+
+        //restore one element selected
         public function restore($id){
             $dccomic = DcComic::withTrashed()->find($id);
             if ($dccomic) {
@@ -27,9 +29,11 @@ class TrashController extends Controller
             }
             return redirect()->route('dccomics.trash');
         }
+
+        // Restore everything
         public function restoreAll(){
             $dccomics = DcComic::onlyTrashed()->get();
-        // Ripristina ogni elemento
+
         foreach ($dccomics as $dccomic) {
             $dccomic->restore();
         }

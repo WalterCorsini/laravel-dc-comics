@@ -2,10 +2,10 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\DcComicController;
-use App\Http\Controllers\TrashController;
 //  link to controller
 use App\Http\Controllers\ModelExampleController;
+use App\Http\Controllers\Admin\DcComicController;
+use App\Http\Controllers\TrashController;
 use App\Models\DcComic;
 
 /*
@@ -19,18 +19,22 @@ use App\Models\DcComic;
 |
 */
 
-Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
 
-//link per andare alla pagina cestino
+
+//link to go to trash page
 Route::get('/trash',[TrashController::class, 'trash'])->name('dccomics.trash');
-//link per eliminare l'oggetto
+
+//link deletes an item permanently
 Route::any('/delete/{id}', [TrashController::class, 'forceDelete'])->name('delete');
-// link per ripristinare l'oggetto
+
+// link to restore selected item
 Route::any('/restore/{id}', [TrashController::class, 'restore'])->name('restore');
 
+// link to restore All Item
 Route::any('/restoreall', [TrashController::class, 'restoreAll'])->name('restoreall');
 
-
-
+// general route to DcComicController
 Route::resource('dccomics', DcComicController::class);
 
+//  route index
+Route::get('/',[DcComicController::class, 'index'])->name('dccomics.index');
