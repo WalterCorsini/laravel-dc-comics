@@ -17,33 +17,61 @@
             @method('put')
             <div>
                 <label for="title">Titolo</label>
-                <input class="w-100" type="text" id="title" name="title" value="{{@old('title',$dccomic->title)}}">
+                <input class="form-control w-100
+                    @error('title')
+                        is-invalid
+                    @enderror"
+                type="text" id="title" name="title" value="{{@old('title',$dccomic->title)}}">
             </div>
             <div>
                 <label for="description">Descrizione</label>
-                <textarea class="w-100" rows="8" type="text" id="description" name="description">
+                <textarea class="form-control w-100
+                    @error('description')
+                        is-invalid
+                    @enderror"
+                rows="8" type="text" id="description" name="description">
                     {{ @old('description',$dccomic->description)}}
                 </textarea>
             </div>
             <div>
                 <label for="thumb">Immagine</label>
-                <input class="w-100" type="text" id="thumb" name="thumb" placeholder="url dell'immagine" value="{{@old('thumb',$dccomic->thumb)}}">
+                <input class="form-control w-100
+                    @error('thumb')
+                        is-invalid
+                    @enderror"
+                type="text" id="thumb" name="thumb" placeholder="url dell'immagine" value="{{@old('thumb',$dccomic->thumb)}}">
             </div>
             <div>
                 <label for="price">Prezzo</label>
-                <input class="w-100" type="text" id="price" name="price" placeholder="prezzo in euro" value="{{@old('price',$dccomic->price)}}">
+                <input class="form-control w-100
+                    @error('price')
+                        is-invalid
+                    @enderror"
+                type="text" id="price" name="price" placeholder="prezzo in euro" value="{{@old('price',$dccomic->price)}}">
             </div>
             <div>
                 <label for="series">Serie</label>
-                <input class="w-100" type="text" id="series" name="series" value="{{@old('series',$dccomic->series)}}">
+                <input class="form-control w-100
+                    @error('series')
+                        is-invalid
+                    @enderror"
+                type="text" id="series" name="series" value="{{@old('series',$dccomic->series)}}">
             </div>
             <div>
                 <label for="sale_date">Uscita</label>
-                <input class="w-100" id="sale_date" name="sale_date" value="{{@old('sale_date',$dccomic->sale_date)}}">
+                <input class="form-control w-100
+                    @error('sale_date')
+                        is-invalid
+                    @enderror"
+                id="sale_date" name="sale_date" value="{{@old('sale_date',$dccomic->sale_date)}}">
             </div>
             <div>
                 <label for="type">Genere</label>
-                <select class="w-25" name="type" id="type">
+                <select class="form-control w-25
+                    @error('type')
+                        is-invalid
+                    @enderror"
+                name="type" id="type">
                     <option value="seleziona genere">Seleziona Genere</option>
                     <option @selected(@old('type',$dccomic->type) === 'comic book') value="comic book">comic book</option>
                     <option @selected(@old('type',$dccomic->type) === 'graphic novel') value="graphic novel">graphic novel</option>
