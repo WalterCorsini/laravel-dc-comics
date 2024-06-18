@@ -7,7 +7,7 @@
     {{-- /section error validate --}}
 
     {{-- container --}}
-    <div class="container w-75">
+    <div class="form-container w-75">
 
         {{-- section title --}}
         <h1 class="text-center">

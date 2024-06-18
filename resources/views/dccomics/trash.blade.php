@@ -2,11 +2,14 @@
 
 @section('content')
 
+
 {{-- to control if there are or not element --}}
 @if(count($dcComicsList) >0)
 
     {{-- section title --}}
-    <h1 class="text-center"> Cestino</h1>
+    <div class="d-flex justify-content-center align-items-center mt-5 pt-5">
+        <h1> Cestino</h1>
+    </div>
     {{-- /section title --}}
 
 
@@ -14,7 +17,7 @@
     <form class="text-center" action="{{ route('restoreall') }}"
     method="GET">
         @csrf
-        <button type="submit" class="btn btn-outline-success mb-5">
+        <button type="submit" class="btn btn-warning mb-5">
             <i class="fa-solid fa-rotate-left">All</i>
         </button>
     </form>
@@ -31,32 +34,22 @@
 @endif
 {{-- /to control if there are or not element --}}
 
+{{-- container-fluid --}}
+<div class="container-fluid">
+
     {{-- container  --}}
-    <div class="container">
+    <div class="container p-5">
 
         {{-- card-container  --}}
-        @foreach ($dcComicsList as $curComic)
-            <div class="card-container">
-                {{-- title --}}
-                <div class="card-title">
-                    <span>
-                        <strong> Titolo: </strong>
-                    </span>
-                    <p>
-                        {{ $curComic->title }}
-                    </p>
-                </div>
-                {{-- /title --}}
-
-                {{-- img --}}
-                <div class="card-img mb-2">
-                    <img src="{{ $curComic->thumb }}">
-                </div>
-                {{-- /img --}}
-
-                {{-- section btn --}}
-                <div class="card-button">
-
+        @foreach ($dcComicsList as $key => $curComic)
+        <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row">{{$key}}</th>
+                <td class="col-10">
+                    {{ $curComic->title }}
+                </td>
+                <td class="col-1">
                     {{-- btn delete  --}}
                     <form action="{{ route('delete', $curComic->id) }}" METHOD="POST">
                         @csrf
@@ -66,7 +59,8 @@
                         </button>
                     </form>
                     {{-- /btn delete  --}}
-
+                </td>
+                <td class="col-1">
                     {{-- btn restore  --}}
                     <form action="{{ route('restore', $curComic->id) }}"
                         method="POST">
@@ -77,16 +71,18 @@
                         </button>
                     </form>
                     {{-- /btn restore  --}}
-
-                </div>
-                {{-- /section btn --}}
-
-            </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         @endforeach
         {{-- card-container  --}}
 
     </div>
     {{-- container  --}}
+
+</div>
+{{-- container-fluid --}}
 
 @endsection
 
