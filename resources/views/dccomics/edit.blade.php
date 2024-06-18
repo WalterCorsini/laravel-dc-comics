@@ -16,7 +16,8 @@
 
     {{-- container --}}
     <div class="container w-75">
-        {{-- title --}}
+        
+        {{-- section title --}}
         <h1 class="text-center">
             Modifica Articolo
         </h1>

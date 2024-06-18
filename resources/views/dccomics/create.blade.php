@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- section error validate --}}
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -10,10 +11,19 @@
             </ul>
         </div>
     @endif
+    {{-- /section error validate --}}
+
+    {{-- container --}}
     <div class="container w-75">
+
+        {{-- section title --}}
         <h1 class="text-center">Aggiungi articolo</h1>
+
+        {{-- form --}}
         <form class="w-100 d-flex flex-column gap-3" action="{{ route('dccomics.store') }}" method="POST">
             @csrf
+
+            {{-- comic title --}}
             <div>
                 <label for="title">
                     Titolo
@@ -25,6 +35,9 @@
                     @enderror"
                     type="text" id="title" name="title" value="{{ old('title') }}">
             </div>
+            {{-- /comic title --}}
+
+            {{-- comic description --}}
             <div>
                 <label for="description">
                     Descrizione
@@ -38,6 +51,9 @@
                     {{ old('description') }}
                 </textarea>
             </div>
+            {{-- /comic description --}}
+
+            {{-- comic thumb --}}
             <div>
                 <label for="thumb">
                     Immagine
@@ -49,6 +65,9 @@
                     @enderror"
                     type="text" id="thumb" name="thumb" value="{{ old('thumb') }}">
             </div>
+            {{-- /comic thumb --}}
+
+            {{-- comic price --}}
             <div>
                 <label for="price">
                     Prezzo
@@ -60,6 +79,9 @@
                     @enderror"
                     type="text" id="price" name="price" value="{{ old('price') }}">
             </div>
+            {{-- /comic price --}}
+
+            {{-- comic series --}}
             <div>
                 <label for="series">
                     Serie
@@ -71,6 +93,9 @@
                     @enderror"
                     type="text" id="series" name="series" value="{{ old('series') }}">
             </div>
+            {{-- /comic series --}}
+
+            {{-- comic sale_date --}}
             <div>
                 <label for="sale_date">
                     Uscita
@@ -82,10 +107,11 @@
                     @enderror"
                     id="sale_date" name="sale_date" value="{{ old('sale_date') }}">
             </div>
-            <div class="d-flex gap-2">
-                <div>
+            {{-- /comic sale_date --}}
 
-                </div>
+            {{-- comic type and button add --}}
+            <div class="d-flex gap-2">
+
                 <label for="type">
                     Genere
                 </label>
@@ -106,6 +132,12 @@
                     </button>
                 </div>
             </div>
+            {{-- /comic type and button add --}}
+
         </form>
+        {{-- /form --}}
+
     </div>
+    {{-- container --}}
+
 @endsection
