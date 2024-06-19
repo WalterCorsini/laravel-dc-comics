@@ -89,7 +89,7 @@ class DcComicController extends Controller
 
     //restore one element selected
     public function restore($id){
-        $dccomic = DcComic::withTrashed()->find($id);
+        $dccomic = DcComic::onlyTrashed()->find($id);
         if ($dccomic) {
             $dccomic->restore();
         }
@@ -98,11 +98,7 @@ class DcComicController extends Controller
 
     // Restore everything
     public function restoreAll(){
-        $dccomics = DcComic::onlyTrashed()->get();
-
-    foreach ($dccomics as $dccomic) {
-        $dccomic->restore();
-    }
+        DcComic::onlyTrashed()->restore();
     return redirect()->route('dccomics.trash');
     }
 }
