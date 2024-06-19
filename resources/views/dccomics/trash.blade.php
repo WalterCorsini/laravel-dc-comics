@@ -13,7 +13,7 @@
 
 
         {{-- form restore all  --}}
-        <form class="text-center" action="{{ route('restoreall')}}" method="GET">
+        <form class="text-center" action="{{ route('restoreall')}}" method="POST">
             @csrf
             <button type="submit" class="btn btn-warning mb-5">
                 <i class="fa-solid fa-rotate-left">All</i>
