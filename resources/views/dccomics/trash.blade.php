@@ -32,7 +32,7 @@
                     <table class="table">
                         <tbody>
                             <tr>
-                                <th scope="row">{{ $key }}</th>
+                                <th scope="row">{{ $key+1 }}</th>
                                 <td class="col-10">
                                     {{ $curComic->title }}
                                 </td>
