@@ -35,6 +35,6 @@ Route::delete('/delete/{id}', [DcComicController::class, 'forceDelete'])->name('
 Route::put('/restore/{id}', [DcComicController::class, 'restore'])->name('restore');
 
 // link to restore All Item
-Route::POST('restoreall', [DcComicController::class, 'restoreAll'])->name('restoreall');
+Route::PATCH('restoreall', [DcComicController::class, 'restoreAll'])->name('restoreall');
 
 

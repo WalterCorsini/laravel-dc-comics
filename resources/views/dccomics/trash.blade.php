@@ -15,6 +15,7 @@
         {{-- form restore all  --}}
         <form class="text-center" action="{{ route('restoreall')}}" method="POST">
             @csrf
+            @method('PUT')
             <button type="submit" class="btn btn-warning mb-5">
                 <i class="fa-solid fa-rotate-left">All</i>
             </button>
@@ -51,7 +52,7 @@
                                     {{-- btn restore  --}}
                                     <form action="{{ route('restore', $curComic->id) }}" method="POST">
                                         @csrf
-                                        @method('PUT')
+                                        @method('PATCH')
                                         <button type="submit" class="btn btn-outline-success">
                                             <i class="fa-solid fa-rotate-left"></i>
                                         </button>
