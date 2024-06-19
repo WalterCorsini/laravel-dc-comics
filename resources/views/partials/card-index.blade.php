@@ -27,10 +27,7 @@
         {{-- /btn add record --}}
 
         {{-- btn modify record --}}
-        <a class="btn btn-success text-decoration-none"
-            href="{{ route('dccomics.edit', ['dccomic' => $curComic->id]) }}">
-            <i class="fa-solid fa-pen-to-square"></i>
-        </a>
+        @include('.partials.btn-modify')
         {{-- /btn modify record --}}
 
         {{-- btn delete record --}}
