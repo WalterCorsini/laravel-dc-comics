@@ -80,10 +80,7 @@ class DcComicController extends Controller
 
     // permanently deletes an item
     public function forceDelete($id){
-        $dccomic = DcComic::withTrashed()->find($id);
-        if ($dccomic) {
-            $dccomic->forceDelete();
-        }
+        DcComic::onlyTrashed()->find($id)->forcedelete();
         return redirect()->route('dccomics.trash');
     }
 
